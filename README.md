@@ -1,6 +1,8 @@
 <p align="center"><img src=".github/printfbanner.png" alt="Printf banner"/></p>
 
-<p align="justify">In the <code>ft_printf</code> project, I replicated the functionality of the standard printf function in C.<br><br>The main challenge of this project was to learn how variadic functions work and how to use them, which involved handling the formatting and printing of text with different data types. Completing this project made possible adding it to my <code>libft</code> library for future use.</p>
+<p align="justify">In the <code>ft_printf</code> project, I replicated the functionality of the standard printf function in C.<br><br>The main challenge of this project was to learn how variadic functions work and how to use them, which involved handling the formatting and printing of text with different data types. Completing this project made possible adding it to my <a href="https://github.com/jandrana/libft">libft</a> library for future use.</p>
+
+- **Reminder:** ❗️ You can check all my 42 projects at <a href="https://github.com/jandrana/42-Cursus">42 Cursus</a>
 
 <table>
   <thead>
