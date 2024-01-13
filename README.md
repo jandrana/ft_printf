@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <td>Formatting<br>Functions</td>
-      <td>Functions like <a href="./ft_pf_putchar.c"><code>ft_pf_putchar</code></a>, <a href="./ft_pf_putstr.c"><code>ft_pf_putstr</code></a>, <a href="./ft_pf_pointer.c"><code>ft_pf_pointer</code></a>, and <a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a> are used to format<br> and print different data types to handle various the different format specifiers</td>
+      <td>Functions like <a href="./ft_printf_utils.c"><code>ft_pf_putchar</code></a>, <a href="./ft_printf_utils.c"><code>ft_pf_putstr</code></a>, <a href="./ft_printf_utils.c"><code>ft_pf_pointer</code></a>, and <a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a> are used to format<br> and print different data types to handle various the different format specifiers</td>
     </tr>
   </tbody>
 </table>
@@ -35,49 +35,49 @@
     <tr>
       <td>%c</td>
       <td>Prints a character</td>
-      <td><a href="./ft_pf_putchar.c"><code>ft_pf_putchar</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putchar</code></a></td>
       <td>int</td>
       <td align="center">-</td>
     </tr>
     <tr>
       <td>%s</td>
       <td>Prints a string</td>
-      <td><a href="./ft_pf_putstr.c"><code>ft_pf_putstr</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putstr</code></a></td>
       <td>char *</td>
       <td align="center">-</td>
     </tr>
     <tr>
       <td>%p</td>
       <td>Prints a pointer</td>
-      <td><a href="./ft_pf_pointer.c"><code>ft_pf_pointer</code></a><br><a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_pointer</code></a><br><a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a></td>
       <td>unsigned long long</td>
       <td>hexadecimal</td>
     </tr>
     <tr>
       <td>%d and %i</td>
       <td>Prints signed integers</td>
-      <td><a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a></td>
       <td>int</td>
       <td>decimal</td>
     </tr>
     <tr>
       <td>%u</td>
       <td>Prints unsigned integers</td>
-      <td><a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a></td>
       <td>unsigned int</td>
       <td>decimal</td>
     </tr>
     <tr>
       <td>%x</td>
       <td>Prints integers in lowercase hexadecimal</td>
-      <td><a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a></td>
       <td>unsigned int</td>
       <td>hexadecimal</td>
     </tr>
     <tr>
       <td>%X</td>
       <td>Prints integers in uppercase hexadecimal</td>
-      <td><a href="./ft_pf_putnbr_base.c"><code>ft_pf_putnbr_base</code></a></td>
+      <td><a href="./ft_printf_utils.c"><code>ft_pf_putnbr_base</code></a></td>
       <td>unsigned int</td>
       <td>hexadecimal</td>
     </tr>

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ana-cast <ana-cast@student.42.fr>          +#+  +:+       +#+         #
+#    By: ana-cast <ana-cast@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 21:00:35 by ana-cast          #+#    #+#              #
-#    Updated: 2023/10/19 04:04:46 by ana-cast         ###   ########.fr        #
+#    Updated: 2024/01/13 17:34:46 by ana-cast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ ECHO = echo n
 ##                              SOURCES AND OBJECTS                           ##
 ################################################################################
 
-SRCS = ft_pf_pointer.c ft_pf_putnbr_base.c \
-	ft_pf_putchar.c ft_pf_putstr.c ft_printf.c
+SRCS = ft_printf_utils.c ft_printf.c
 
 OBJECTS = $(SRCS:.c=.o)
 
