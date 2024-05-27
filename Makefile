@@ -6,7 +6,7 @@
 #    By: ana-cast <ana-cast@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 21:00:35 by ana-cast          #+#    #+#              #
-#    Updated: 2024/01/13 17:34:46 by ana-cast         ###   ########.fr        #
+#    Updated: 2024/05/27 19:52:59 by ana-cast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,21 @@
 ################################################################################
 
 NAME = libftprintf.a
-CC = gcc
+
+# Check if gcc is installed
+HAS_GCC := $(shell command -v gcc 2> /dev/null)
+
+# Check if clang is installed
+HAS_CLANG := $(shell command -v clang 2> /dev/null)
+
+ifdef HAS_GCC
+  CC = gcc
+else ifdef HAS_CLANG
+  CC = clang
+else
+  $(error No compiler found)
+endif
+
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 ECHO = echo n
@@ -58,7 +72,7 @@ head :
 	@echo "      |______|_|      42MLG: by ana-cast \n"
 	@echo "Proyect: \033[36m ft_printf $(COLOUR_MAGENTA)"
 	@echo "Commands:\033[36m all clean fclean re $(COLOUR_END)\n"
-
+	@printf "$(COLOUR_BLUE) 🛠   Compiler: $(CC) $(COLOUR_END)\n\n"
 
 $(NAME) : $(OBJECTS)
 	@printf "\n ⏱  Creating $(NAME)"
