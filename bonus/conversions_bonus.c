@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   conversions_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ana-cast <ana-cast@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:32:53 by ana-cast          #+#    #+#             */
-/*   Updated: 2024/05/27 19:39:49 by ana-cast         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:44:59 by ana-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf_bonus.h>
 
-void	ft_pf_putchar(char c, int *result)
+void	ft_bpf_putchar(char c, int *result)
 {
 	if (*result == -1)
 		return ;
@@ -22,35 +22,35 @@ void	ft_pf_putchar(char c, int *result)
 		*result += 1;
 }
 
-void	ft_pf_putstr(char *s, int *result)
+void	ft_bpf_putstr(char *s, int *result, int len)
 {
 	int	i;
 
 	i = -1;
 	if (!s)
 		s = "(null)";
-	while (s[++i])
-		ft_pf_putchar(s[i], result);
+	while (len-- && s[++i])
+		ft_bpf_putchar(s[i], result);
 }
 
-void	ft_pf_pointer(unsigned long long pointer, int *result)
+void	ft_bpf_pointer(unsigned long long pointer, int *result, t_flag *fg)
 {
-	if (pointer == 0)
-		ft_pf_putstr("(nil)", result);
+	if (!pointer)
+		ft_bpf_putstr("(nil)", result, -1);
 	else
 	{
-		ft_pf_putstr("0x", result);
+		ft_bpf_putstr("0x", result, -1);
 		if (pointer >= 16)
 		{
-			ft_pf_putnbr_base((pointer / 16), HEXA_LOW, result);
-			ft_pf_putnbr_base((pointer % 16), HEXA_LOW, result);
+			ft_bpf_putnbr_base((pointer / 16), "0123456789abcdef", result, fg);
+			ft_bpf_putnbr_base((pointer % 16), "0123456789abcdef", result, fg);
 		}
 		else
-			ft_pf_putnbr_base(pointer, HEXA_LOW, result);
+			ft_bpf_putnbr_base(pointer, "0123456789abcdef", result, fg);
 	}
 }
 
-void	ft_pf_putnbr_base(long long nbr, char *base, int *result)
+void	ft_bpf_putnbr_base(long long nbr, char *base, int *result, t_flag *fg)
 {
 	int	len_base;
 
@@ -59,15 +59,21 @@ void	ft_pf_putnbr_base(long long nbr, char *base, int *result)
 	{
 		if (nbr < 0)
 		{
-			ft_pf_putchar('-', result);
+			ft_bpf_putchar('-', result);
+			if (fg->zero)
+			{
+				while (fg->width--)
+					ft_bpf_putchar('0', result);
+			}
+			ft_bpf_prec(fg, result, nbr);
 			nbr = -nbr;
 		}
 		if (nbr > ft_strlen(base) - 1)
 		{
-			ft_pf_putnbr_base(nbr / len_base, base, result);
-			ft_pf_putnbr_base(nbr % len_base, base, result);
+			ft_bpf_putnbr_base(nbr / len_base, base, result, fg);
+			ft_bpf_putnbr_base(nbr % len_base, base, result, fg);
 		}
 		else
-			ft_pf_putchar(base[nbr], result);
+			ft_bpf_putchar(base[nbr], result);
 	}
 }
